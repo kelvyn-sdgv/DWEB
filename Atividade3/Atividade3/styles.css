@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --corprincipal: #f4f6f8;
+    --azul: #3f6fa0;
+    --azulescuro: #243447;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: var(--corprincipal);
+}
+
+header {
+    background-color: var(--azulescuro);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    margin-bottom: 20px;
+}
+
+nav {
+    width: 960px;
+    margin: 0 auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    padding: 5px;
+}
+
+nav a:hover {
+    color: #bcd7f5;
+}
+
+main {
+    width: 960px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+h2 {
+    color: var(--azul);
+    font-size: 28px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--azul);
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: var(--azulescuro);
+    font-size: 22px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: var(--azul);
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+ul,
+ol {
+    margin: 15px 0 20px 30px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+article {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+article h3 {
+    margin-top: 0;
+}
+
+figure {
+    width: 700px;
+    margin: 30px auto;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #dddddd;
+}
+
+figure img {
+    width: 100%;
+    max-width: 650px;
+}
+
+figcaption {
+    font-size: 13px;
+    color: #666666;
+    margin-top: 10px;
+}
+
+a {
+    color: var(--azul);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #cccccc;
+}
+
+#modelos article {
+    width: 46%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 1.5%;
+    min-height: 230px;
+}
+
+#tipos article {
+    border-left: 4px solid var(--azul);
+}
+
+#ferramentas article {
+    border-left: 4px solid var(--azul);
+}
+
+#seguranca li {
+    background-color: white;
+    padding: 8px;
+    border: 1px solid #dddddd;
+}
+
+#referencias li {
+    margin-bottom: 12px;
+}
+
+footer {
+    background-color: var(--azulescuro);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer p {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: #bcd7f5;
+}
+
+@media (max-width: 1000px) {
+    nav,
+    main {
+        width: 90%;
+    }
+
+    figure {
+        width: 90%;
+    }
+
+    #modelos article {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
