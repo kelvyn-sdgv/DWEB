@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0c1424">
+    <meta name="description" content="Pedra, papel e tesoura: um duelo rápido entre você e o computador.">
+    <title>Jokenpô | Você contra a máquina</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="container">
+        <header class="topo">
+            <a class="marca" href="index.html" aria-label="Jokenpô - início">
+                <span class="marca-simbolo" style="overflow: hidden;">
+                    <img src="https://png.klev.club/uploads/posts/2024-04/png-klev-club-9ujm-p-kamen-nozhnitsi-bumaga-png-22.png"
+                        alt="Jokenpô" style="width: 100%; height: 100%; object-fit: cover;">
+                </span>
+                <span>JOKENPÔ</span>
+            </a>
+            <span class="topo-direita">PEDRA <span>/</span> PAPEL <span>/</span> TESOURA</span>
+        </header>
+
+        <section class="apresentacao">
+            <p class="etiqueta"><span class="linha"></span> QUEM PERDER PAGA A PRÓXIMA</p>
+            <h1>Você contra <span>a máquina.</span></h1>
+            <p class="descricao">Escolhe sua mão. O computador que lute.</p>
+        </section>
+
+        <section class="placar" aria-label="Placar da partida">
+            <div class="pontuacao">
+                <span class="pontuacao-nome">VOCÊ</span>
+                <strong id="pontos-jogador">0</strong>
+            </div>
+            <div class="pontuacao meio">
+                <span class="pontuacao-nome">EMPATES</span>
+                <strong id="pontos-empates">0</strong>
+            </div>
+            <div class="pontuacao">
+                <span class="pontuacao-nome">COMPUTADOR</span>
+                <strong id="pontos-computador">0</strong>
+            </div>
+        </section>
+
+        <section class="arena" aria-label="Área do confronto">
+            <div class="lado lado-jogador">
+                <div class="lado-cabecalho">
+                    <span class="lado-titulo">01 / SUA JOGADA</span>
+                    <span class="lado-marca">VOCÊ</span>
+                </div>
+                <div class="figura figura-jogador" id="icone-jogador">
+                    <span class="emoji-reserva" id="emoji-jogador" aria-hidden="true">?</span>
+                    <img class="foto-mao" id="imagem-jogador" alt="" width="220" height="220">
+                </div>
+                <span class="escolha" id="texto-jogador">Aguardando</span>
+            </div>
+
+            <div class="versus" aria-hidden="true"><span>VS</span></div>
+
+            <div class="lado lado-computador">
+                <div class="lado-cabecalho">
+                    <span class="lado-titulo">02 / ADVERSÁRIO</span>
+                    <span class="lado-marca">CPU</span>
+                </div>
+                <div class="figura figura-computador" id="icone-computador">
+                    <span class="emoji-reserva" id="emoji-computador" aria-hidden="true">?</span>
+                    <img class="foto-mao" id="imagem-computador" alt="" width="220" height="220">
+                </div>
+                <span class="escolha" id="texto-computador">Aguardando</span>
+            </div>
+        </section>
+
+        <div class="resultado" id="resultado" role="status" aria-live="polite">
+            <span class="resultado-ponto" aria-hidden="true"></span>
+            <span id="mensagem-resultado">Escolha uma jogada para começar.</span>
+        </div>
+
+        <section class="area-escolha">
+            <div class="titulo-area">
+                <div>
+                    <p class="secao-etiqueta">SUA VEZ</p>
+                    <h2>Qual vai ser?</h2>
+                </div>
+                <div class="comandos"><span class="rodada" id="rodada">RODADA 01</span><button type="button"
+                        class="reiniciar" onclick="reiniciar()">↻ Reiniciar placar</button></div>
+            </div>
+            <div class="opcoes">
+                <button class="opcao" type="button" onclick="jogar('pedra')" data-escolha="pedra">
+                    <span class="opcao-visual">
+                        <span class="opcao-emoji" aria-hidden="true">✊</span>
+                        <img class="foto-mao" src="https://openclipart.org/image/800px/34093" alt="" width="120"
+                            height="120">
+                    </span>
+                    <span class="opcao-nome">Pedra</span>
+                    <span class="opcao-dica">Quebra tesoura</span>
+                </button>
+                <button class="opcao" type="button" onclick="jogar('papel')" data-escolha="papel">
+                    <span class="opcao-visual">
+                        <span class="opcao-emoji" aria-hidden="true">✋</span>
+                        <img class="foto-mao" src="https://openclipart.org/image/800px/32731" alt="" width="120"
+                            height="120">
+                    </span>
+                    <span class="opcao-nome">Papel</span>
+                    <span class="opcao-dica">Cobre pedra</span>
+                </button>
+                <button class="opcao" type="button" onclick="jogar('tesoura')" data-escolha="tesoura">
+                    <span class="opcao-visual">
+                        <span class="opcao-emoji" aria-hidden="true">✌️</span>
+                        <img class="foto-mao" src="https://openclipart.org/image/800px/34231" alt="" width="120"
+                            height="120">
+                    </span>
+                    <span class="opcao-nome">Tesoura</span>
+                    <span class="opcao-dica">Corta papel</span>
+                </button>
+            </div>
+        </section>
+
+        <footer class="rodape">Projeto D Web Kelvyn Santana</footer>
+    </main>
+</body>
+
+</html>
