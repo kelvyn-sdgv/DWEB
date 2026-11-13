@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#142941">
+    <title>Pós-Cena | Pesquisa de cinema</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="pagina">
+        <header class="topo">
+            <div class="marca"><span class="marca-sinal">◼</span> PÓS<span>CENA</span><b>.</b></div>
+            <div class="topo-info">PESQUISA DE ESTREIA <span>/</span> DWEB 2026</div>
+        </header>
+
+        <section class="capa">
+            <div class="capa-texto">
+                <span class="etiqueta">PESQUISA DE PÚBLICO • EDIÇÃO 01</span>
+                <h1>O filme acabou.<br><em>Foi bom mesmo?</em></h1>
+                <p>45 pessoas. Três perguntas. Um resultado sem enrolação.</p>
+            </div>
+            <div class="capa-foto" role="img" aria-label="Poltronas vermelhas de uma sala de cinema"></div>
+            <span class="capa-lateral">LUZES ACESAS / OPINIÕES ABERTAS</span>
+        </section>
+
+        <section class="progresso-bloco" aria-label="Andamento da pesquisa">
+            <div class="progresso-topo">
+                <div><small>COLETA DE RESPOSTAS</small><strong id="progresso-texto">0 de 45 registradas</strong></div>
+                <span id="progresso-numero">00 / 45</span>
+            </div>
+            <div class="trilha"><div class="preenchimento" id="barra"></div></div>
+        </section>
+
+        <main class="conteudo">
+            <section class="painel coleta">
+                <div class="cabecalho-painel">
+                    <div><span class="sobrelinha">01 / COLETA</span><h2>Avaliação da vez</h2></div>
+                    <span class="contador-pessoa" id="pessoa-atual">PESSOA 01</span>
+                </div>
+                <p class="texto-apoio">É rapidinho. Preencha os dados e registre a próxima pessoa.</p>
+
+                <form id="formulario">
+                    <div class="campos-linha">
+                        <div class="campo">
+                            <label for="idade">Idade</label>
+                            <input type="number" id="idade" min="1" max="120" step="1" placeholder="Ex.: 20" required>
+                        </div>
+                        <div class="campo">
+                            <label for="sexo">Sexo</label>
+                            <select id="sexo" required>
+                                <option value="">Selecione</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <fieldset class="notas">
+                        <legend>E o filme, como foi?</legend>
+                        <div class="notas-grade">
+                            <label class="nota">
+                                <input type="radio" name="opiniao" value="4" required>
+                                <span class="nota-corpo"><b>4</b><span>Ótimo</span></span>
+                            </label>
+                            <label class="nota">
+                                <input type="radio" name="opiniao" value="3">
+                                <span class="nota-corpo"><b>3</b><span>Bom</span></span>
+                            </label>
+                            <label class="nota">
+                                <input type="radio" name="opiniao" value="2">
+                                <span class="nota-corpo"><b>2</b><span>Regular</span></span>
+                            </label>
+                            <label class="nota">
+                                <input type="radio" name="opiniao" value="1">
+                                <span class="nota-corpo"><b>1</b><span>Péssimo</span></span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="botao-registrar" id="registrar">Registrar resposta <span>→</span></button>
+                    <p id="mensagem" class="mensagem" role="status" aria-live="polite">Pronto para a primeira resposta.</p>
+                </form>
+            </section>
+
+            <section class="painel dados">
+                <div class="cabecalho-painel">
+                    <div><span class="sobrelinha">02 / RESULTADOS</span><h2>O veredito</h2></div>
+                    <span class="estado" id="estado">EM ANDAMENTO</span>
+                </div>
+                <p class="texto-apoio">Os números mudam conforme as respostas chegam.</p>
+
+                <div class="visao-geral">
+                    <div class="aprovacao">
+                        <small>ACHARAM ÓTIMO OU BOM</small>
+                        <strong id="porcentagem">—</strong>
+                        <span>do público que respondeu</span>
+                    </div>
+                    <div class="numeros">
+                        <div><small>Média de idade</small><strong id="media">—</strong><span>anos</span></div>
+                        <div><small>Maior idade</small><strong id="maior">—</strong><span>anos</span></div>
+                        <div><small>Menor idade</small><strong id="menor">—</strong><span>anos</span></div>
+                        <div class="numero-ruim"><small>Avaliaram como péssimo</small><strong id="pessimos">0</strong><span>pessoas</span></div>
+                    </div>
+                </div>
+
+                <div class="secundarios">
+                    <div class="bloco-interno">
+                        <h3>Quem assistiu</h3>
+                        <div class="linha-publico"><span>Mulheres</span><b id="mulheres">0</b></div>
+                        <div class="linha-publico"><span>Homens</span><b id="homens">0</b></div>
+                        <div class="linha-publico"><span>Outros</span><b id="outros">0</b></div>
+                    </div>
+                    <div class="bloco-interno">
+                        <h3>Notas da sessão</h3>
+                        <div class="linha-nota"><span>Ótimo</span><div class="mini-trilha"><i id="barra-otimo"></i></div><b id="total-otimo">0</b></div>
+                        <div class="linha-nota"><span>Bom</span><div class="mini-trilha"><i id="barra-bom"></i></div><b id="total-bom">0</b></div>
+                        <div class="linha-nota"><span>Regular</span><div class="mini-trilha"><i id="barra-regular"></i></div><b id="total-regular">0</b></div>
+                        <div class="linha-nota"><span>Péssimo</span><div class="mini-trilha"><i id="barra-pessimo"></i></div><b id="total-pessimo">0</b></div>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button type="button" id="desfazer" disabled>← Desfazer última</button>
+                    <button type="button" id="reiniciar" disabled>Recomeçar pesquisa</button>
+                </div>
+            </section>
+        </main>
+        <footer>Projeto D Web Kelvyn Santana</footer>
+    </div>
+</body>
+</html>
